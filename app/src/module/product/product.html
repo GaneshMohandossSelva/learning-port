@@ -1,0 +1,78 @@
+
+ <div class="well row main-container">
+
+ 		<!-- Product Page -->
+        <div class="col-md-12" ng-if="productPage">
+        <div class="col-md-12 float-right">
+	        	<h6 class="float-right" >Welcome {{promotionObj.name}}! </h6>
+	        </div>
+ 	        <div class="col-md-12">
+	        	<h4 class="heading">Product</h4>
+	        </div>
+	        
+	        <div class="col-md-12"> 
+	        	<div class="col-md-4 product" ng-repeat="promotions in promotionObj.deal">
+	        		<div class="col-md-12 p-title">{{promotions.code}}</div>
+	        		<div class="col-md-12 p-name">{{promotions.name}}</div>
+	        		<div class="col-md-12 p-price">$ {{promotions.price}}</div>
+	        		<div class="col-md-12 p-quantity"><input type="number" name="quantity" style="width: 70px; height: 23px" ng-model="promotions.quantity" value="1"></div>
+	        		<div class="col-md-12">
+	        		<button ng-model="promotionObj.id" ng-click="addToCart(promotions)" style=" width: 120px;">Add to cart</button></div>
+
+	        	</div>
+	        </div>
+	        <div class="col-md-12">
+	        </div>
+	         <div class="col-md-12">
+	        	<button ng-click="checkout(checkObj)" style="float: right; width: 170px;">Checkout | Cart:{{checkObj.length}} </button>
+	        </div>
+       </div>
+
+       <!-- Check out page -->
+       <div class="col-md-12" ng-if="checkoutPage">
+       		<h4 class="heading">Checkout</h4>
+       		<div class="col-md-12 checkout-page" ng-repeat="checkoutList in checkoutObj">
+       			<div class="col-md-12 checkout-heading" ng-if="$first" >
+	       			<div class="col-md-7">
+	       				<h5>Product Name</h5>
+	       			</div>
+	       			<div class="col-md-1">
+	       				<h5>Price</h5>
+	       			</div>
+	       			<div class="col-md-1">
+	       				<h5>Quantity</h5>
+	       			</div>
+	       			<div class="col-md-3">
+	       				<h5>Amount</h5>
+	       			</div>
+       			</div>
+
+       			<div class="col-md-7">
+       				<h5>{{checkoutList.name}} ({{checkoutList.code}})</h5> 
+       				<div class="checkout-spacing"> <span ng-if="checkoutList.promo.promoText!=''">Promotion: </span>  &nbsp;{{checkoutList.promo.promoText}}</div>
+       			</div>
+       			<div class="col-md-1">
+       				<h5>{{checkoutList.price}}</h5>
+       				<div class="checkout-spacing"> &nbsp;</div>
+       			</div>
+       			<div class="col-md-1">
+       				<h5>{{checkoutList.quantity}}</h5>
+       				<div class="checkout-spacing">&nbsp; </div>
+       			</div>
+       			<div class="col-md-3">
+       				<h5>$ {{checkoutList.sumPrice | number: 2}}</h5>
+       				<div class="checkout-spacing">&nbsp; </div>
+       			</div>
+
+	       		<div class="col-md-12 checkout-total" ng-if="$last">
+	       			<div class="col-md-9 total-text">
+	       				<h4>Total</h4>
+	       			</div>
+	       			<div class="col-md-2 total-amt">
+	       				<h5>$ {{totalAmt | number: 2}}</h5>
+	       			</div>
+	       		</div>
+       		</div>
+
+       </div>
+</div>

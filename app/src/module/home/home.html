@@ -1,0 +1,38 @@
+<div class="well row main-container">
+        <div class="col-md-4"></div>
+               <div class="col-md-4">
+        	<div class="row home-container">
+        	<h2>Login</h2>
+		       <form name="userForm" ng-submit="userLogin(userForm.$valid)" novalidate>
+
+		       	<div class="row row-space">
+	              <div class="col-md-3">User name</div>
+		           <div class="col-md-4">
+		           		<input type="text" ng-model="userObj.userName" name="userName" required/>
+						  <span style="color:red" ng-show="userForm.userName.$dirty && userForm.userName.$invalid">
+						  	<span ng-show="userForm.userName.$error.required">Please enter Username.</span>
+						  </span>
+		           </div>
+		        </div>
+
+				<div class="row row-space" >
+		           <div class="col-md-3">Password</div>
+		           <div class="col-md-4">
+		           		<input type="password" ng-model="userObj.password" name="password" required/>
+						  <span style="color:red" ng-show="userForm.password.$dirty && userForm.password.$invalid">
+						  	<span ng-show="userForm.password.$error.required">Please enter password.</span>
+						  </span>
+		           </div>
+		        </div>
+		        <div class="row row-space" >
+		           <div class="col-md-3"></div>
+		           <div class="col-md-4">
+		           		<input type="submit" name="Save" value="Submit" 
+		           		ng-disabled="userForm.userName.$dirty && userForm.userName.$invalid || userForm.password.$dirty && userForm.password.$invalid || userForm.email.$dirty && userForm.email.$invalid" />
+		           </div>
+		        </div>
+		    	</form>
+			</div>
+        </div>
+<div class="col-md-4"></div>
+</div>
