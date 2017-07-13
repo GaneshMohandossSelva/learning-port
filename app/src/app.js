@@ -9,7 +9,7 @@
 		function ($urlRouterProvider, $locationProvider) {
 		  'use strict';
           $locationProvider.html5Mode(false);
-		  $urlRouterProvider.otherwise("/product");
+		  $urlRouterProvider.otherwise("/home");
 		}])
 
 })();
