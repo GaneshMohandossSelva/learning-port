@@ -120,7 +120,7 @@
 						 	productId: 3,
 						 	promoText: "4 or more price drops to $379.99",
 						 	promoTo: 4,
-						 	promoFor:100000,
+						 	promoFor:1000000000,
 						 	dropPrice: 379.99
 						 }
 				 	]
@@ -144,7 +144,7 @@
 						 	productId: 3,
 						 	promoText: "3 or more price drops to $389.99",
 						 	promoTo: 3,
-						 	promoFor:100000,
+						 	promoFor:1000000000,
 						 	dropPrice: 389.99
 						 }
 				 	]
