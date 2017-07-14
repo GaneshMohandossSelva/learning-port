@@ -208,7 +208,7 @@
 		 	$scope.checkoutObj = [];
 		 	var tempTotal = 0;
 		 	for(var i=0; i<obj.length; i++) {
-		 		if(obj[i].promo.promoTo > 0 && obj[i].promo.promoFor > 0) {
+		 		if(obj[i].promo.promoTo > 0 && obj[i].promo.promoFor > 0 && obj[i].promo.dropPrice == 0) {
 		 			var discountQuantity = obj[i].promo.promoTo - obj[i].promo.promoFor;
 		 			obj[i].sumPrice = (obj[i].quantity * obj[i].price) - (obj[i].price * discountQuantity);
 		 		} else if(obj[i].promo.dropPrice > 0 && obj[i].promo.promoTo == 0 && obj[i].promo.promoFor == 0) {
